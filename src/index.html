@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Weather by Andrei Medvedev</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body id="BODY">
+  <div class="header">
+
+    <div class="header__left-buttons">
+
+      <button class="button button-update" id="BUTTON_UPDATE">
+        <div class="lds-ring" id="SPINNER">
+          <div></div>
+          <div></div>
+        </div>
+      </button>
+
+      <select class="select" size="1" name="Language" id="LANGUAGE">
+        <option selected value="EN">EN</option>
+        <option value="RU">RU</option>
+        <option value="BE">BE</option>
+      </select>
+
+      <button class="button button__fahrenheit" id="BUTTON__FAHRENHEIT">°F</button>
+      <button class="button button__celsius active" id="BUTTON__CELSIUS">°C</button>
+
+    </div>
+
+    <div class="header__right-buttons">
+      
+      <button class="button search-input__voice-speaker" id="SPEAKER"></button>
+      <button class="button search-input__voice-button" id="MICROPHONE"></button>
+      <input class="search__input" type="search" name="search__city" required="" placeholder="Search city" id="S_I">
+      <button class="button search-input__button" id="S_I_B"></button>
+      
+    </div>
+
+  </div>
+
+  <div class="main__wrapper">
+
+    <div class="weather__data">
+
+      <p class="weather__location" id="LOCATION"></p>
+      <p class="weather__date-time" id="DATE_TIME"></p>
+      <div class="weather__time" id="TIMER"></div>
+      <p class="weather__temperature-today" id="TEMPERATURE_TODAY"></p>
+      <img class="weather__weather-icon" alt="" src="" id="ICON_1">
+
+      <div class="weather__weather-data">
+        <p id="CONDITION"></p>
+        <p id="FEELS_LIKE"></p>
+        <p id="WIND"></p>
+        <p id="HUMIDITY"></p>
+      </div>
+
+      <div class="forecast">
+        <p class="forecast__day" id="FORECAST_DAY_1"></p>
+        <p class="forecast__temperature" id="FORECAST_DAY_1_TEMP"></p>
+        <img class="forecast__icon" alt="" src="" id="ICON_2">
+      </div>
+
+      <div class="forecast">
+        <p class="forecast__day" id="FORECAST_DAY_2"></p>
+        <p class="forecast__temperature" id="FORECAST_DAY_2_TEMP"></p>
+        <img class="forecast__icon" alt="" src="" id="ICON_3">
+      </div>
+
+      <div class="forecast">
+        <p class="forecast__day" id="FORECAST_DAY_3"></p>
+        <p class="forecast__temperature" id="FORECAST_DAY_3_TEMP"></p>
+        <img class="forecast__icon" alt="" src="" id="ICON_4">
+      </div>
+
+    </div>
+
+    <div class="map-wrapper">
+      <div class="map__map" id="MAP__MAP">
+        <iframe id="MAP" width="400" height="400"
+          src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=Saratov&amp;ie=UTF8&amp;z=13&amp;output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      </div>
+      <div class="map__coordinates">
+        <p id="LATITUDE"></p>
+        <p id="LONGITUDE"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ticker__wrapper">
+    <marquee id="TICKER" class="ticker__line"></marquee>
+  </div>
+
+  <script src="./js/script_index.js" type="module"></script>
+</body>
+
+</html>
